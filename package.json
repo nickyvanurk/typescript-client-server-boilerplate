@@ -1,12 +1,15 @@
 {
-  "name": "typescript-starter",
+  "name": "typescript-client-server-boilerplate",
   "version": "1.0.0",
-  "description": "A TypeScript starter project",
-  "main": "index.js",
+  "description": "A TypeScript client/server boilerplate project.",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
-    "start:dev": "nodemon",
-    "build": "rimraf ./dist && tsc",
+    "start:client": "npm run build:client && webpack-dev-server --open",
+    "start:server": "npm run build:server && node dist/server.index.js",
+    "start:dev:client": "webpack-dev-server",
+    "start:dev:server": "nodemon",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "rimraf ./dist/js/bundle.js && webpack",
+    "build:server": "rimraf ./dist/server && tsc -b server",
     "lint": "eslint . --ext .ts",
     "lint-and-fix": "eslint . --ext .ts --fix",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
@@ -27,7 +30,11 @@
     "nodemon": "^2.0.3",
     "prettier": "^2.0.4",
     "rimraf": "^3.0.2",
+    "ts-loader": "^6.2.2",
     "ts-node": "^8.8.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }
