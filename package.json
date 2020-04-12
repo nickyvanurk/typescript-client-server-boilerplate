@@ -8,8 +8,9 @@
     "start:dev:client": "webpack-dev-server",
     "start:dev:server": "nodemon",
     "build": "npm run build:client && npm run build:server",
-    "build:client": "rimraf ./dist/js/bundle.js && webpack",
+    "build:client": "rimraf ./dist/client/js/bundle.js && webpack",
     "build:server": "rimraf ./dist/server && tsc -b server",
+    "clean": "rimraf ./dist/client/js/bundle.js && rimraf ./dist/server",
     "lint": "eslint . --ext .ts",
     "lint-and-fix": "eslint . --ext .ts --fix",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
