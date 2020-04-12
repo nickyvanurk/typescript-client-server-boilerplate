@@ -1,3 +1,3 @@
-# TypeScript Starter
+# TypeScript Client/Server Boilerplate
 
-A TypeScript starter project based on [this](https://khalilstemmler.com/blogs/typescript/node-starter-project/) tutorial.
+A TypeScript client/server boilerplate project to reduce the time it takes to start a new project.
